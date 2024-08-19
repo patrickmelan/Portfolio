@@ -22,7 +22,7 @@ function App() {
         <div id="pricing">
           <Pricing />
         </div>
-        <div id="contact">
+        <div id="contact" className='mt-24 md:mt-0'>
           <Contact />
         </div>
       </div>

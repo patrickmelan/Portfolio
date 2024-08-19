@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import confetti from 'canvas-confetti';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const Contact = () => {
 
@@ -22,25 +23,34 @@ const Contact = () => {
 	function sendEmail(e){
 		e.preventDefault();
 
-		emailjs.send(serviceId, templateId, templateParams, publicKey)
-		.then(
-			() => {
-				console.log('SUCCESS!');
-				confetti({
-					particleCount: 300,
-					spread: 250,
-					origin: { y: 0.65 },
-					disableForReducedMotion: true
-				})
-				setEmail('');
-				setMessage('');
-				setName('');
-			},
-			(error) => {
-				console.log('FAILED...', error.text);
-			},
-		);
+		const captchaValue = recaptchaRef.current.getValue();
+		if (!captchaValue) {
+			alert('Please complete the reCAPTCHA');
+		} else {
+			emailjs.send(serviceId, templateId, templateParams, publicKey)
+			.then(
+				() => {
+					console.log('SUCCESS!');
+					confetti({
+						particleCount: 300,
+						spread: 250,
+						origin: { y: 0.65 },
+						disableForReducedMotion: true
+					})
+					setEmail('');
+					setMessage('');
+					setName('');
+				},
+				(error) => {
+					console.log('FAILED...', error.text);
+				},
+			);
+		}
+
+		
 	};
+
+	const recaptchaRef = useRef()
 
 
 	return (
@@ -59,6 +69,9 @@ const Contact = () => {
 					<div className="sm:col-span-2">
 						<label htmlFor="message" className="block mb-2 text-sm font-medium">Your message</label>
 						<textarea id="message" value={message} onChange={(e) => {setMessage(e.target.value)}} rows="6" className="block p-2.5 w-full text-sm bg-blue border-turqoise border-[1px] rounded-lg text-white shadow-sm" placeholder="Type message here...   "></textarea>
+					</div>
+					<div className="flex justify-center">
+						<ReCAPTCHA ref={recaptchaRef} sitekey={process.env.REACT_APP_SITE_KEY} />
 					</div>
 					<button type="submit" onClick={() => sendEmail} className="py-3 px-5 text-sm w-full font-medium text-center text-white border-turqoise border-[1px] rounded-lg sm:w-full hover:bg-turqoise hover:text-blue duration-500">Send message</button>
 				</form>
