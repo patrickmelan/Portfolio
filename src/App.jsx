@@ -11,6 +11,8 @@ import Contact from './components/Contact';
 import Socials from './components/Socials';
 
 function App() {
+  const h = window.innerHeight;
+
   return (
     <BrowserRouter>
       <div className="bg-blue px-8 md:px-0 text-white">
@@ -22,7 +24,8 @@ function App() {
         <div id="pricing">
           <Pricing />
         </div>
-        <div id="contact" className='mt-24 md:mt-0'>
+        {h < 1000 ? <div className='h-1/2 w-full'></div> : ""}
+        <div id="contact">
           <Contact />
         </div>
       </div>

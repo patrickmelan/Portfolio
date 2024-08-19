@@ -8,7 +8,7 @@ export default function Info() {
                 <div className="flex flex-col items-center md:items-start px-4 md:px-0">
                     <p className="font-mono text-xl pl-[6px] text-turqoise">Hello, I'm</p>
                     <h1 className="text-5xl md:text-8xl pt-2 md:pt-4 font-radio">Patrick Melan</h1>
-                    <p className="text-xl md:text-6xl pl-1 pt-1 font-mono text-gray-400 py-2">I webify your business.</p>
+                    <p className="text-xl md:text-6xl pl-1 pt-1 font-mono text-gray-400 py-2">I <span className="">webify</span> your business.</p>
                     
                     <div className="flex w-full md:w-1/2 text-gray-400 py-4 overflow-x-auto">
                         <p className="text-center md:text-left">I am a web developer focused on building amazing websites for my clients. Currently interested in React, but I am always learning!</p>
