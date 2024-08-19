@@ -11,21 +11,22 @@ import Contact from './components/Contact';
 import Socials from './components/Socials';
 
 function App() {
-  const h = window.innerHeight;
 
   return (
     <BrowserRouter>
-      <div className="bg-blue px-8 md:px-0 text-white space-y-36 md:space-y-0">
+      <div className="bg-blue px-8 md:px-0 text-white">
         <Nav />
-        <Info />
-        <div id="about">
-          <About />
-        </div>
-        <div id="pricing">
-          <Pricing />
-        </div>
-        <div id="contact">
-          <Contact />
+        <div className="space-y-36 md:space-y-0">
+          <Info />
+          <div id="about">
+            <About />
+          </div>
+          <div id="pricing">
+            <Pricing />
+          </div>
+          <div id="contact">
+            <Contact />
+          </div>
         </div>
       </div>
     </BrowserRouter>
