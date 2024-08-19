@@ -10,7 +10,7 @@ export default function Pricing() {
                     <div className="pt-0 md:pt-16 w-2/5">
                         <p className="text-turqoise text-2xl font-mono">Pricing</p>
                     </div>
-                    <div className="flex flex-col md:flex-row pt-0 md:pt-16 w-full space-x-0 space-y-2 md:space-x-4 md:space-y-0">
+                    <div className="flex flex-col md:flex-row pt-8 md:pt-16 w-full space-x-0 space-y-2 md:space-x-4 md:space-y-0">
                         <PricingCard1 />
                         <PricingCard2 />
                         <PricingCard3 />

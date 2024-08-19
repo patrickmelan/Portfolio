@@ -15,7 +15,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="bg-blue px-8 md:px-0 text-white">
+      <div className="bg-blue px-8 md:px-0 text-white space-y-36 md:space-y-0">
         <Nav />
         <Info />
         <div id="about">
@@ -24,7 +24,6 @@ function App() {
         <div id="pricing">
           <Pricing />
         </div>
-        {h < 1000 ? <div className='h-1/2 w-full'></div> : ""}
         <div id="contact">
           <Contact />
         </div>
