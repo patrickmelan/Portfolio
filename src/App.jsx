@@ -21,9 +21,7 @@ function App() {
           <div id="about">
             <About />
           </div>
-          <div id="pricing">
-            <Pricing />
-          </div>
+          
           <div id="contact">
             <Contact />
           </div>
@@ -34,3 +32,10 @@ function App() {
 }
 
 export default App;
+
+/*
+<div id="pricing">
+            <Pricing />
+          </div>
+
+*/

@@ -13,7 +13,7 @@ export default function Nav() {
                 <div className="flex-none">
                     <ul className="menu menu-horizontal text-white ">
                         <li><Link to="#about" smooth className="hover:text-turqoise duration-500 font-mono">About Me</Link></li>
-                        <li><Link to="#pricing" smooth className="hover:text-turqoise duration-500 font-mono">Pricing</Link></li>
+                        {/*<li><Link to="#pricing" smooth className="hover:text-turqoise duration-500 font-mono">Pricing</Link></li>*/}
                         <li><Link to="#contact" smooth className="hover:text-turqoise duration-500 font-mono">Contact</Link></li>
                     </ul>
                 </div>
